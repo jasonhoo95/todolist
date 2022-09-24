@@ -29,12 +29,29 @@ export const task = createSlice({
 			state.filterBy = action.payload.filter;
 		},
 		updateTask: (state, action: PayloadAction<any>) => {
-			state.list.map((o: any, key: number) => {
-				if (action.payload.key == o.id) {
-					o.filter = action.payload.filter;
-				}
-			});
-			console.log(state.list, "state list update");
+			if (action.payload.filter) {
+				state.list.map((o: any, key: number) => {
+					if (action.payload.key == o.id) {
+						o.filter = action.payload.filter;
+					}
+				});
+			}
+
+			if (action.payload.name != null) {
+				state.list.map((o: any, key: number) => {
+					if (action.payload.key == o.id) {
+						o.name = action.payload.name;
+					}
+				});
+			}
+
+			if (action.payload.edit != null) {
+				state.list.map((o: any, key: number) => {
+					if (action.payload.key == o.id) {
+						o.edit = action.payload.edit;
+					}
+				});
+			}
 		},
 	},
 });

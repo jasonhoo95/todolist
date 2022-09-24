@@ -41,9 +41,9 @@ export default function TaskComponent() {
 	return (
 		<div className="ml-auto mr-auto" style={{ maxWidth: "1000px" }}>
 			<div className="p-8 rounded-[10px] bg-white my-8">
-				<div className="flex items-center">
+				<div className="flex flex-wrap items-center">
 					<input
-						className="w-4/5 input-txt"
+						className="md:w-4/5 w-full input-txt"
 						onChange={(e) => {
 							setState((prevstate) => ({ ...prevstate, inputTxt: e.target.value }));
 						}}
@@ -55,32 +55,32 @@ export default function TaskComponent() {
 							dispatch(addTask({ name: state.inputTxt, id: v4() }));
 						}}
 						style={{ background: "#F72424", display: "inline-block", borderRadius: "10px" }}
-						className="px-6 mx-5 py-3 font-bold cursor-pointer text-white">
+						className="px-6 my-3 md:ml-auto md:w-auto w-full py-3 text-center font-bold cursor-pointer text-white">
 						Add Task
 					</div>
 				</div>
-				<div className="flex my-5 tab-bar">
+				<div style={{ overflowX: "auto" }} className="flex my-5 tab-bar">
 					<div
 						onClick={(e: any) => {
 							setFilter("all");
-							console.log(filter, "filter");
 						}}
+						style={{ whiteSpace: "nowrap", display: "inline-block" }}
 						className={filter == "all" ? "mx-3 cursor-pointer active" : "mx-3 cursor-pointer"}>
 						All ({state.allList})
 					</div>
 					<div
 						onClick={(e: any) => {
 							setFilter("pending");
-							console.log(filter, "filter");
 						}}
+						style={{ whiteSpace: "nowrap", display: "inline-block" }}
 						className={filter == "pending" ? "mx-3 cursor-pointer active" : "mx-3 cursor-pointer"}>
 						Pending ({state.pendingList})
 					</div>
 					<div
 						onClick={(e: any) => {
 							setFilter("done");
-							console.log(filter, "filter");
 						}}
+						style={{ whiteSpace: "nowrap", display: "inline-block" }}
 						className={filter == "done" ? "mx-3 cursor-pointer active" : "mx-3 cursor-pointer"}>
 						Completed ({state.doneList})
 					</div>

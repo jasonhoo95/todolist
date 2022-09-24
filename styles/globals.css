@@ -43,3 +43,9 @@ a {
 		background: black;
 	}
 }
+
+@media (max-width: 750px) {
+	.remove-btn {
+		font-size: 12px;
+	}
+}
