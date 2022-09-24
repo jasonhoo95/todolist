@@ -1,26 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 html,
 body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+	padding: 0;
+	margin: 0;
+	font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+	background: #b993d6; /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #b993d6, #8ca6db); /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #b993d6, #8ca6db); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+.tab-bar .active {
+	text-decoration: underline;
+	color: red;
+}
+
+.input-txt {
+	padding: 10px 20px;
+	border: 1px solid #999;
+}
+
+input[type="checkbox"]:checked + label.strikethrough {
+	text-decoration: line-through;
 }
 
 a {
-  color: inherit;
-  text-decoration: none;
+	color: inherit;
+	text-decoration: none;
 }
 
 * {
-  box-sizing: border-box;
+	box-sizing: border-box;
 }
 
 @media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-  body {
-    color: white;
-    background: black;
-  }
+	html {
+		color-scheme: dark;
+	}
+	body {
+		color: white;
+		background: black;
+	}
 }
